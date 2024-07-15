@@ -1,0 +1,21 @@
+@use './variables.scss' as *;
+
+.product{
+  width: var(--product-img-width);
+}
+.product-img{
+  width: 100%;
+  border: 1px solid #D7D7D7;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.product-title{
+  margin: 8px 0 2px 0;
+}
+
+@media (max-width: 405px) {
+  .product-title{
+    font-size: $text-sizeS;
+  }
+}

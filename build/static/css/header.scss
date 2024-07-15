@@ -1,0 +1,50 @@
+@use './variables.scss' as *;
+
+.header{
+  max-width: $display-width;
+  margin: $center;
+  height: 46px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: content-box;
+}
+.header-bottom-border{
+  width: 100%;
+  border-bottom: 1px solid #E1E1E1;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1221px) {
+  .header{
+    max-width: $product-img-widthM*5+(22px*4);
+  }
+}
+@media (max-width: 1017px) {
+  .header{
+    max-width: $product-img-widthM*4+(22px*3);
+  }
+}
+@media (max-width: 813px) {
+  .header{
+    max-width: $product-img-widthM*3+(22px*2);
+  }
+}
+
+@media (max-width: 609px) {
+  .header{
+    width: $product-img-widthM*2+22px;
+  }
+}
+@media (max-width: 405px) {
+  .header{
+    width: $product-img-widthS*2+10px;
+  }
+}
+@media (max-width: 375px) {
+  .header{
+    width: $width-full;
+    box-sizing: border-box;
+  }
+}

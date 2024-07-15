@@ -1,0 +1,23 @@
+@use './variables.scss' as *;
+
+.product-list{
+  margin: $center;
+  padding: 0 10px;
+  max-width: $display-width;
+  display: flex;
+  justify-content: center;
+  gap: 20px 22px;
+  flex-wrap: wrap;
+  padding-bottom: 94px;
+}
+
+.products-loading{
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 405px) {
+  .product-list{
+    gap: 13px 10px;
+  }
+}

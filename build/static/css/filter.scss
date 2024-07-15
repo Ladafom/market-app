@@ -1,0 +1,70 @@
+@use './variables.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.filter{
+  justify-items: stretch;
+  justify-content: center;
+  display: var(--filter-display);
+  grid-template-columns: var(--grid-template);
+  grid-template-rows: 48px;
+  grid-column-gap: 22px;
+  grid-row-gap: 0px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+.filter-search{
+  width: $width-full;
+  position: relative;
+  & .filter-search-input{
+    background: transparent;
+  }
+}
+.filter-search-input, .filter-select select{
+  width: $width-full;
+  height: 48px;
+  border:  1px solid #D7D7D7;
+  border-radius: 4px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding: 12px;
+}
+.filter-search-icon{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 813px) {
+  .filter{
+    flex-wrap: wrap;
+    gap: 8px;
+    width: $width-full;
+    padding: 0 10px;
+    margin-bottom: 30px;
+    & input, div, select{
+      width: $product-img-widthM*3+44px;
+    }
+  }
+}
+@media (max-width: 609px) {
+  .filter{
+    & input, div, select{
+      width: $product-img-widthM*2+22px;
+    }
+  }
+}
+@media (max-width: 405px) {
+  .filter{
+    & input, div, select{
+      width: $product-img-widthS*2+10px;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .filter{
+    & input, div, select{
+      width: $width-full;
+    }
+  }
+}
