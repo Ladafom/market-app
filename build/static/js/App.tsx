@@ -21,7 +21,7 @@ function App() {
   }, [isDarkTheme]);
 
   useEffect(() => {
-    fetchProducts('https://dummyjson.com/products')
+  fetchProducts(`https://dummyjson.com/products?limit=0`)
   }, [])
   console.log('render App')
 

@@ -1,18 +1,24 @@
 import { useEffect } from 'react'
 import '../css/select.scss'
-import {categoryApi} from '../zustand/zustandStore'
+import {categoryApi, productsApi} from '../zustand/zustandStore'
 
 function SelectCategory() {
 
   const fetchCategory = categoryApi((state)=>state.fetchCategory)
   const categories = categoryApi((state)=> state.categories)
+  const fetchProducts = productsApi((state)=>state.fetchProducts)
+  const setSelectedCategory = categoryApi((state)=> state.setSelectedCategory)
 
   useEffect(() => {
     fetchCategory('https://dummyjson.com/products/categories')
   }, [])
 
   function selectHandle(value:any){
-    console.log(`selected ${value}`);
+    if(value === 'all')
+    fetchProducts(`https://dummyjson.com/products?limit=0`)
+    else
+    fetchProducts(`https://dummyjson.com/products/category/${value}?limit=0`)
+    setSelectedCategory(value)
   }
 
   console.log('render Select')
@@ -31,6 +37,7 @@ function SelectCategory() {
             )
           })
         }
+        <option value="all" >All</option>
         </select>
       </div>
     )

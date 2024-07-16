@@ -12,7 +12,9 @@ type API = {
 }
 type Category = {
   categories: any;
-  isLoading:boolean,
+  isLoading:boolean;
+  selectedCategory: string;
+  setSelectedCategory: (category:string) => void;
   fetchCategory: (url:string)=>void;
 }
 
@@ -40,6 +42,10 @@ export const productsApi = create<API>((set)=> ({
 export const categoryApi = create<Category>((set)=> ({
   categories:null,
   isLoading:false,
+  selectedCategory:'',
+  setSelectedCategory: (category) => (set((state)=>({
+    selectedCategory: state.selectedCategory = category
+  }))),
   fetchCategory: async (url:string) => {
     set({ isLoading: true })
     try {
