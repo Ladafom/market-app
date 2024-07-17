@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import '../css/select.scss'
-import {categoryApi, productsApi} from '../zustand/zustandStore'
+import {categoryApi, productsApi, AmountProducts} from '../zustand/zustandStore'
 
 function SelectCategory() {
 
@@ -8,6 +8,7 @@ function SelectCategory() {
   const categories = categoryApi((state)=> state.categories)
   const fetchProducts = productsApi((state)=>state.fetchProducts)
   const setSelectedCategory = categoryApi((state)=> state.setSelectedCategory)
+  const amount = AmountProducts((state)=> state.amount)
 
   useEffect(() => {
     fetchCategory('https://dummyjson.com/products/categories')
@@ -15,9 +16,9 @@ function SelectCategory() {
 
   function selectHandle(value:any){
     if(value === 'all')
-    fetchProducts(`https://dummyjson.com/products?limit=0`)
+    fetchProducts(`https://dummyjson.com/products?limit=${amount}`)
     else
-    fetchProducts(`https://dummyjson.com/products/category/${value}?limit=0`)
+    fetchProducts(`https://dummyjson.com/products/category/${value}?limit=${amount}`)
     setSelectedCategory(value)
   }
 

@@ -4,7 +4,7 @@ import SelectAmount from './SelectAmount';
 import searcchIcon from '../img/search-icon.svg'
 import '../css/filter.scss'
 
-function Filter({amount}:any){
+function Filter(){
   const sarchHandle = (value:any) => {
     console.log(`selected ${value}`);
   };
@@ -22,7 +22,7 @@ function Filter({amount}:any){
           className="filter-search-icon"/>
       </div>
       <SelectCategory/>
-      <SelectAmount amount={amount}/>
+      <SelectAmount />
     </div>
   )
 }

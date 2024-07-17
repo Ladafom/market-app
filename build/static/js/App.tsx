@@ -28,7 +28,7 @@ function App() {
   return (
     <div>
       <Header/>
-      { products && < Filter amount={products.total}/>}
+      <Filter />
       {
         products ? < ProductList products={products.products}/> :
         <h1 className="products-loading">
