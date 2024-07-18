@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import '../css/select.scss'
-import {categoryApi, productsApi, AmountProducts} from '../zustand/zustandStore'
+import {categoryApi, productsApi, amountProducts, searcProduct , useValid} from '../zustand/zustandStore'
 
 function SelectCategory() {
 
@@ -8,7 +8,9 @@ function SelectCategory() {
   const categories = categoryApi((state)=> state.categories)
   const fetchProducts = productsApi((state)=>state.fetchProducts)
   const setSelectedCategory = categoryApi((state)=> state.setSelectedCategory)
-  const amount = AmountProducts((state)=> state.amount)
+  const amount = amountProducts((state)=> state.amount)
+  const setQuery = searcProduct((state)=>state.setQuery)
+  const setIsValid = useValid((state)=>state.setIsValid)
 
   useEffect(() => {
     fetchCategory('https://dummyjson.com/products/categories')
@@ -19,14 +21,18 @@ function SelectCategory() {
     fetchProducts(`https://dummyjson.com/products?limit=${amount}`)
     else
     fetchProducts(`https://dummyjson.com/products/category/${value}?limit=${amount}`)
+
     setSelectedCategory(value)
+    setQuery('')
+    setIsValid(true)
   }
 
-  console.log('render Select')
+  // console.log('render Select')
   if(categories){
     return (
       <div className='filter-select'>
         <select
+        id='selectAmount'
         defaultValue='select'
         onChange={(e)=>selectHandle(e.target.value)}
         >

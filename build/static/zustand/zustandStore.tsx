@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-// import { persist, createJSONStorage } from 'zustand/middleware'
 
 type Themes = {
   isDarkTheme: boolean;
@@ -20,6 +19,14 @@ type Category = {
 type AmountProducts = {
   amount: string;
   setAmount: (amount:any) => void;
+}
+type SearchProduct = {
+  query: string;
+  setQuery: (query:string) => void;
+}
+type Valid = {
+  isValid: boolean;
+  setIsValid: (valid:boolean)=>void;
 }
 
 export const useDarkTheme = create<Themes>((set)=>({
@@ -62,9 +69,23 @@ export const categoryApi = create<Category>((set)=> ({
   }
 }))
 
-export const AmountProducts = create<AmountProducts>((set)=> ({
+export const amountProducts = create<AmountProducts>((set)=> ({
   amount: '10',
   setAmount: (amount) =>  (set((state)=>({
     amount: state.amount = amount,
+  })))
+}))
+
+export const searcProduct = create<SearchProduct>((set)=> ({
+  query: '',
+  setQuery: (query) =>  (set((state)=>({
+    query: state.query = query,
+  })))
+}))
+
+export const useValid = create<Valid>((set) =>({
+  isValid:true,
+  setIsValid: (valid)=>(set(state=> ({
+    isValid: state.isValid=valid
   })))
 }))

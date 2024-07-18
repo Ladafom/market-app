@@ -2,6 +2,7 @@ import Product from "./Product";
 import '../css/product-list.scss'
 
 function ProductList ({products}:any){
+
   return(
     <div className="product-list">
       {products?.map((product:any) =>(

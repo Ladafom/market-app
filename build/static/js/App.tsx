@@ -21,15 +21,19 @@ function App() {
   }, [isDarkTheme]);
 
   useEffect(() => {
-  fetchProducts(`https://dummyjson.com/products?limit=0`)
+  fetchProducts(`https://dummyjson.com/products?limit=10`)
   }, [])
-  console.log('render App')
+  // console.log('render App')
 
   return (
     <div>
       <Header/>
       <Filter />
       {
+        products && !products.total ?
+        <h1 className="products-loading">
+          No result
+        </h1>:
         products ? < ProductList products={products.products}/> :
         <h1 className="products-loading">
           Loading...

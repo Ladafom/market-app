@@ -2,6 +2,8 @@
 @import './filter.scss';
 @import './product.scss';
 @import './header.scss';
+@import './variables.scss';
+
 body{
   margin: 0;
   padding: 0;
@@ -16,10 +18,10 @@ h1, h4, p{
 h1 {
   font-size: 24px;
   font-weight: bold;
-  color: #444444;
+  color: $medium-gray;
 }
 h4{
-  color: #1D448E;
+  color: $price-color;
   font-size: 16px;
 }
 p{
@@ -27,7 +29,6 @@ p{
   font-weight: 400;
 }
 input {
-  // transition: background-color 0.3s ease;
   &::-webkit-search-cancel-button{
     display: none;
   }
@@ -40,32 +41,36 @@ input {
 }
 
 body.dark{
-  background-color: #1E1E1E;
+  background-color: $dark-gray;
 }
 .dark{
   & p, h1 {
     color: #fff;
   }
   & h4 {
-    color: #547AC5;
+    color: $price-color-dark;
   }
   & .filter-search-input, .filter-select {
-    border: 1px solid #444444;
+    border: 1px solid $medium-gray;
+    color: $medium-gray;
   }
   & .product-img{
     border: none;
   }
   & .header-bottom-border{
-    border: 1px solid #444444;
+    border: 1px solid $medium-gray;
+  }
+  & .filter-valid-error{
+    color: $error-color;
   }
   & .filter-select {
     border: none;
     & select {
-      background-color: #1E1E1E;
-      border: 1px solid #444444;
+      background-color: $dark-gray;
+      border: 1px solid $medium-gray;
       &::-webkit-scrollbar {
         width: 10px;
-        background-color: #1E1E1E;
+        background-color: $dark-gray;
       }
     }
   }

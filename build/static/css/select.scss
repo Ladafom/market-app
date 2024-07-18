@@ -1,9 +1,10 @@
+@use './variables.scss' as *;
 .filter-select{
   border: none;
   position: relative;
   & select{
     background-color: #fff;
-    color: #868686;
+    color: $light-gray;
     cursor: pointer;
     &::-webkit-scrollbar {
       width: 10px;
@@ -11,7 +12,7 @@
     }
     &::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background-color: #868686;
+      background-color: $light-gray;
     }
     &:active, :focus{
       outline: none;
@@ -26,6 +27,6 @@
     pointer-events: none;
     border-left: $size solid transparent;
     border-right: $size solid transparent;
-    border-top: $size solid #868686;
+    border-top: $size solid $light-gray;
   }
 }

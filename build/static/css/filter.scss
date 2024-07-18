@@ -27,12 +27,17 @@
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   padding: 12px;
+  color: $medium-gray;
 }
 .filter-search-icon{
   position: absolute;
   top: 12px;
   right: 12px;
   cursor: pointer;
+}
+.filter-valid-error{
+  color: $error-color;
+  font-size: 12px
 }
 
 @media (max-width: 813px) {
