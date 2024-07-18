@@ -50,14 +50,10 @@ body.dark{
   & h4 {
     color: $price-color-dark;
   }
-  & .filter-search-input, .filter-select {
-    border: 1px solid $medium-gray;
-    color: $medium-gray;
-  }
   & .product-img{
     border: none;
   }
-  & .header-bottom-border{
+  & .header-bottom-border, .filter-search-input, .filter-select{
     border: 1px solid $medium-gray;
   }
   & .filter-valid-error{

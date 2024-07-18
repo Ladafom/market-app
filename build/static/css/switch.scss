@@ -7,3 +7,11 @@
 .ant-switch-inner-unchecked{
   margin-top: -30px !important;
 }
+.ant-switch .ant-switch-inner{
+  padding-inline-start: 27px;
+  padding-inline-end: 0px;
+}
+.ant-switch.ant-switch-checked .ant-switch-inner {
+  padding-inline-start: 0px;
+  padding-inline-end: 27px;
+}
